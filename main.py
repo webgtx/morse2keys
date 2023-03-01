@@ -4,7 +4,7 @@ from time import sleep
 
 input_buffer = [None, None, None]
 controller = keyboard.Controller()
-mod_key = Key.ctrl_r
+mod_key = Key.ctrl_l
 
 def combination2key(mod, option, key, timeout):
 	if input_buffer[1] == mod and input_buffer[0] == option:
@@ -21,12 +21,12 @@ def on_press(self):
 	# if self == Key.esc:
 	# 	exit(0)
 
-	combination2key(
-		mod=mod_key,
-		option=Key.alt_l,
-		key="Z",
-		timeout=.5
-	)
+#	combination2key(
+#		mod=mod_key,
+#		option=Key.alt_l,
+#		key="Z",
+#		timeout=.5
+#	)
 
 	combination2key(
 		mod=mod_key,
@@ -37,9 +37,16 @@ def on_press(self):
 
 	combination2key(
 		mod=mod_key,
-		option=Key.ctrl_l,
+		option=Key.ctrl_r,
 		key="4",
 		timeout=.5
+	)
+
+	combination2key(
+	    mod=mod_key,
+	    option=Key.alt_gr,
+	    key="$",
+	    timeout=.5
 	)
 
 with keyboard.Listener(on_press=on_press) as l:
